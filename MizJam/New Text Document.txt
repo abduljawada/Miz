@@ -1,0 +1,93 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Cinemachine;
+public class CameraShake : MonoBehaviour
+{
+    CinemachineVirtualCamera cinemachineVirtualCamera => GetComponent<CinemachineVirtualCamera>();
+    float shakeTimer;
+
+    public void ShakeCamera(float intensity, float time)
+    {
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = GetComponent<CinemachineBasicMultiChannelPerlin>();
+
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        shakeTimer = time;
+    }
+
+    private void Update()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = GetComponent<CinemachineBasicMultiChannelPerlin>();
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Health : MonoBehaviour
+{
+    SpriteFlash spriteFlash => GetComponentInChildren<SpriteFlash>();
+    GameManager gameManager => GameManager.instance;
+    Spawner spawner => GetComponent<Spawner>();
+    [SerializeField] int maxHealth = 6;
+    [SerializeField] GameObject deathParticle;
+    [SerializeField] CameraShake cameraShake;
+    int currentHealth;
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (transform.tag == "Player")
+        {
+            cameraShake.ShakeCamera();
+        }
+
+        if (currentHealth <= 0)
+        {
+            if (gameObject.tag != "Player")
+            {
+                Die();
+            }
+        }
+
+        spriteFlash.Flash();
+
+        spawner.Spawn();
+    }
+
+    void Die()
+    {
+        Destroy(this.gameObject);
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
+    }
+}

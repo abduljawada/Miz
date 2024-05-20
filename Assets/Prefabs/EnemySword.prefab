@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &657503248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051812152812667837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49cd1e106493274a9c3b2e5db5da61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  knockbackForce: 3
+  knockDuration: 0.75
+  followPlayer: 0
+  attacking: 0
+  rotationDegree: 120
+  rotationDuration: 0.75
+--- !u!1001 &8634016640100315545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1760898785974628900, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628900, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628903, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628920, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: knockbackForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760898785974628921, guid: be0e76d0044d7ff47a76533abdc0e843,
+        type: 3}
+      propertyPath: attackDuration
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 536868466077797601, guid: be0e76d0044d7ff47a76533abdc0e843, type: 3}
+    - {fileID: 1760898785974628921, guid: be0e76d0044d7ff47a76533abdc0e843, type: 3}
+    - {fileID: 1760898785974628920, guid: be0e76d0044d7ff47a76533abdc0e843, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: be0e76d0044d7ff47a76533abdc0e843, type: 3}
+--- !u!1 &8051812152812667837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1760898785974628900, guid: be0e76d0044d7ff47a76533abdc0e843,
+    type: 3}
+  m_PrefabInstance: {fileID: 8634016640100315545}
+  m_PrefabAsset: {fileID: 0}
